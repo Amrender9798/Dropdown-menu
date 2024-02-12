@@ -3,7 +3,7 @@ import "./App.css";
 import Dropdown from "./Dropdown";
 
 function App() {
-  const options = ["Yes", "Probably not"];
+  const options = ["Yes", "May be","Probably not", "No"];
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState("");
 

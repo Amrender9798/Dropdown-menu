@@ -1,14 +1,23 @@
 #dropdown {
-  border: 2px solid black;
-  border-top: 1px solid black;
-  width: 25%;
-  margin-left: 40%;
-}
-p {
-  font-size: 1.5rem;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  top: 30%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 150px; /* Increase dropdown width */
+  z-index: 1;
   cursor: pointer;
-  padding: 10px 0px;
+  margin-top: 10px; /* Add margin to position below the button */
 }
+
+p {
+  padding: 15px;
+  margin: 0;
+  color: #333;
+  transition: background-color 0.3s ease-in-out;
+}
+
 p:hover {
-  background-color: aliceblue;
+  background-color: #007bff;
+  color: #fff;
 }
