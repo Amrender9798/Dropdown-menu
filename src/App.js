@@ -3,9 +3,10 @@ import "./App.css";
 import Dropdown from "./Dropdown";
 
 function App() {
-  const options = ["Yes", "May be","Probably not", "No"];
+  const options = ["Yes", "May be", "Probably not", "No"];
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState("");
+  const [top, setTop] = useState("27.1%");
 
   const handleButtonHover = () => {
     setVisible(true);
@@ -25,6 +26,7 @@ function App() {
 
   const handleDropdownClick = (option) => {
     setSelected(option);
+    setTop("31%");
     setVisible(false);
   };
 
@@ -41,6 +43,7 @@ function App() {
           onMouseEnter={handleDropdownHover}
           onMouseLeave={handleDropdownLeave}
           onMouseClick={handleDropdownClick}
+          top={top}
         />
       )}
     </div>
