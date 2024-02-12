@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Dropdown from "./Dropdown";
 
 function App() {
+  const options = ["Yes", "Probably not"];
+  const [visible, setVisible] = useState(false);
+  const [selected, setSelected] = useState("");
+
+  const handleButtonHover = () => {
+    setVisible(true);
+  };
+
+  const handleButtonLeave = () => {
+    setVisible(false);
+  };
+
+  const handleDropdownHover = () => {
+    setVisible(true);
+  };
+
+  const handleDropdownLeave = () => {
+    setVisible(false);
+  };
+
+  const handleDropdownClick = (option) => {
+    setSelected(option);
+    setVisible(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app">
+      <h1>Should you use a dropdown?</h1>
+      <h2>{selected}</h2>
+      <button onMouseEnter={handleButtonHover} onMouseLeave={handleButtonLeave}>
+        Select
+      </button>
+      {visible && (
+        <Dropdown
+          options={options}
+          onMouseEnter={handleDropdownHover}
+          onMouseLeave={handleDropdownLeave}
+          onMouseClick={handleDropdownClick}
+        />
+      )}
     </div>
   );
 }
